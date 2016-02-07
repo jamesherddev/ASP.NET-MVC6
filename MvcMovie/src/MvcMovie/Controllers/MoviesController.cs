@@ -21,7 +21,7 @@ namespace MvcMovie.Controllers
         {
             var genreQry = from m in _context.Movie
                            orderby m.Genre
-                           select m.Genre; //test
+                           select m.Genre;
 
             var genreList = new List<string>();
             genreList.AddRange(genreQry.Distinct());
@@ -99,7 +99,7 @@ namespace MvcMovie.Controllers
         // POST: Movies/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([Bind("ID, Title, ReleaseDate, Genre, Price")] Movie movie)
+        public IActionResult Edit([Bind("ID, Title, ReleaseDate, Genre, Price, Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
