@@ -21,7 +21,7 @@ namespace MvcMovie.Controllers
         {
             var genreQry = from m in _context.Movie
                            orderby m.Genre
-                           select m.Genre;
+                           select m.Genre; //test
 
             var genreList = new List<string>();
             genreList.AddRange(genreQry.Distinct());
